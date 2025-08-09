@@ -1,0 +1,15 @@
+Dear mentor, thank you for your review.
+
+Bugfix log:
+
+Wrong Naming
+- Renamed Cafeinfo.tsx -> CafeInfo.tsx
+- Renamed Cafeinfo.module.css -> CafeInfo.module.css
+- Refactored the path in imports
+- Handled case sensitivity conflict between MacOS - GitHub and Vercel - Linux
+
+VoteOptions errors
+- Changed typing for canReset property to boolean
+- Applied explicit boolean typing to outcome of showReset() in App.tsx
+
+

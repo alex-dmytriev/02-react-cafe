@@ -2,7 +2,7 @@ import { useState } from "react";
 import { type Votes } from "../../types/votes";
 import { type VoteType } from "../../types/votes";
 import css from "./App.module.css";
-import CafeInfo from "../CafeInfo/CafeInfo";
+import CafeInfo from "../CafeInfo/Cafeinfo";
 import VoteOptions from "../VoteOptions/VoteOptions";
 import VoteStats from "../VoteStats/VoteStats";
 import { Notification } from "../Notification/Notification";
@@ -32,7 +32,7 @@ export default function App() {
   const positiveRate = totalVotes ? Math.round((good / totalVotes) * 100) : 0;
 
   //Flag to show / hide reset button
-  const showReset = () => totalVotes > 0;
+  const showReset = (): boolean => totalVotes > 0;
 
   return (
     <div className={css.app}>
@@ -40,7 +40,7 @@ export default function App() {
       <VoteOptions
         onVote={handleVote}
         onReset={resetVotes}
-        canReset={showReset}
+        canReset={showReset()}
       />
       {totalVotes > 0 ? (
         <VoteStats
