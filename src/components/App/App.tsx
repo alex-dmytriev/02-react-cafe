@@ -28,9 +28,11 @@ export default function App() {
 
   // Stats calculation
   const { good, bad, neutral } = votes;
-  const totalVotes = good + bad + neutral;
-  const positiveRate = totalVotes ? Math.round((good / totalVotes) * 100) : 0;
-  const resetShown = totalVotes > 0; // Flag to show/hide reset button
+  const totalVotes: number = good + bad + neutral;
+  const positiveRate: number = totalVotes
+    ? Math.round((good / totalVotes) * 100)
+    : 0;
+  const resetShown: boolean = totalVotes > 0; // Flag to show/hide reset button
 
   return (
     <div className={css.app}>
