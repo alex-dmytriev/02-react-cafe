@@ -30,9 +30,7 @@ export default function App() {
   const { good, bad, neutral } = votes;
   const totalVotes = good + bad + neutral;
   const positiveRate = totalVotes ? Math.round((good / totalVotes) * 100) : 0;
-
-  //Flag to show / hide reset button
-  const showReset = (): boolean => totalVotes > 0;
+  const resetShown = totalVotes > 0; // Flag to show/hide reset button
 
   return (
     <div className={css.app}>
@@ -40,7 +38,7 @@ export default function App() {
       <VoteOptions
         onVote={handleVote}
         onReset={resetVotes}
-        canReset={showReset()}
+        canReset={resetShown}
       />
       {totalVotes > 0 ? (
         <VoteStats
